@@ -1,0 +1,11 @@
+{
+    "id": "boxy",
+    "addresses": {
+        "00:30:1b:ba:88:4e": "boxy"
+    },
+    "interface": "eth1",
+    "halt": true //junk bios
+}
+
+
+

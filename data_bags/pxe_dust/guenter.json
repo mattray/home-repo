@@ -1,0 +1,17 @@
+{
+  "id": "guenter",
+  "addresses": {
+    "80:3f:5d:08:79:b6": "guenter"
+  },
+  // Ubuntu
+  "version": "13.04", //for netbooting the xps-13
+  "netboot_url": "http://archive.ubuntu.com/ubuntu/dists/raring/main/installer-amd64/current/images/netboot/netboot.tar.gz"
+
+  // Debian
+  // "platform": "debian",
+  // "version": "7.2",
+  // "netboot_url": "http://http.us.debian.org/debian/dists/wheezy/main/installer-amd64/current/images/netboot/netboot.tar.gz",
+  // "root": {
+  //     "crypted_password": "$6$Trby4Y5R$bi90k7uYY5ImXe5MWGFW9kel2BnMCcYO9EnwngTFIXKG2/nWcLKTJZ3verMFnpFbITI9.eHwZ.HR1UPeKbCAV1"
+  // }
+}

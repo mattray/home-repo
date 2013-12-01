@@ -1,0 +1,28 @@
+berksfile:
+    options: '--no-freeze --halt-on-frozen'
+
+cookbooks:
+
+roles:
+- home-admin:
+- home-base:
+
+environments:
+- home:
+
+data bags:
+- pxe_dust:
+    items:
+    - "*"
+
+- users:
+    items:
+    - "*"
+
+nodes:
+# - clamps.home.atx:
+#     run_list: role[home-admin]
+#     options: -x mray --sudo -E home
+# - hypnotoad.home.atx:
+#     run_list: role[home-base],recipe[zoneminder]
+#     options: -x mray --sudo -E home
