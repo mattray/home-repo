@@ -5,14 +5,14 @@
     "version": "12.04",
     "boot_volume_size": "55GB",
     "packages": "emacs23-nox, build-essential, linux-headers-server",
-    "domain": "lab.atx",
+    "domain": "home.atx",
     "netboot_url": "http://archive.ubuntu.com/ubuntu/dists/precise/main/installer-amd64/current/images/netboot/netboot.tar.gz",
-    "environment": "lab",
-    "run_list": "role[lab-base]",
+    "environment": "home",
+    "run_list": "role[home-base]",
     "user": {
         "fullname": "Ubuntu",
         "username": "ubuntu",
         "crypted_password": "$6$Trby4Y5R$bi90k7uYY5ImXe5MWGFW9kel2BnMCcYO9EnwngTFIXKG2/nWcLKTJZ3verMFnpFbITI9.eHwZ.HR1UPeKbCAV1"
     },
-    "interfaces": "\nauto eth0\niface eth0 inet dhcp\n\nauto eth1\niface eth1 inet dhcp\n\nauto eth2"
+    "interfaces": "\nauto eth0\niface eth0 inet dhcp\n"
 }
