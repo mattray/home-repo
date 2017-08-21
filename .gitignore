@@ -7,3 +7,4 @@
 .vagrant
 Berksfile.lock
 cookbooks/*
+.kitchen
