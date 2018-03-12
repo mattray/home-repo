@@ -9,3 +9,12 @@ run_list(
   "recipe[sudo]",
   "recipe[mattray]"
 )
+
+override_attributes(
+  "chef_client" => {
+    "config" => {
+      "verbose_logging" => true,
+      "client_fork" => true
+    }
+  }
+)

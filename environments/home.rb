@@ -12,6 +12,7 @@ override_attributes(
   },
   'chef_client' => {
     'config' => {
+      'color' => false,
       'interval' => 900,
       'http_retry_delay' => 10,
       'log_level' => ':warn'
