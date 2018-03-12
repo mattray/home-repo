@@ -1,0 +1,271 @@
+{
+  "revision_id": "8f8a8028f1c8f688b34966377c3ab009f2ef2a94f4c89ea29afa2f7c9b24b062",
+  "name": "macbookpro",
+  "run_list": [
+    "recipe[chef-client::config]",
+    "recipe[chef-client::service]",
+    "recipe[chef-client::delete_validation]",
+    "recipe[ntp::default]",
+    "recipe[openssh::default]",
+    "recipe[sudo::default]",
+    "recipe[mattray::default]",
+    "recipe[mattray::macbookpro]",
+    "recipe[chef_client_updater::default]"
+  ],
+  "included_policy_locks": [
+    {
+      "name": "base",
+      "revision_id": "4594015dd3da196777b4f53177f554c472dc5779726bf23d44bbd7b7317d159d",
+      "source_options": {
+        "path": "./base.lock.json"
+      }
+    }
+  ],
+  "cookbook_locks": {
+    "chef-client": {
+      "version": "10.0.1",
+      "identifier": "7620d91184a4c35aca72dfad5222b3068f26ea00",
+      "dotted_decimal_identifier": "33250163925755075.25555342631719458.196840752867840",
+      "cache_key": "chef-client-10.0.1-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/chef-client/versions/10.0.1/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/chef-client/versions/10.0.1/download",
+        "version": "10.0.1"
+      }
+    },
+    "chef_client_updater": {
+      "version": "3.2.5",
+      "identifier": "b28b6237e884ef5f822e64ac8ce17105056dae6d",
+      "dotted_decimal_identifier": "50255799815537903.26883258556648673.124266379849325",
+      "cache_key": "chef_client_updater-3.2.5-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/chef_client_updater/versions/3.2.5/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/chef_client_updater/versions/3.2.5/download",
+        "version": "3.2.5"
+      }
+    },
+    "cron": {
+      "version": "5.0.1",
+      "identifier": "bf4739498120ed99947c3c25bd15d8fe757e80fd",
+      "dotted_decimal_identifier": "53840031923642605.43228932742692117.238587404517629",
+      "cache_key": "cron-5.0.1-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/cron/versions/5.0.1/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/cron/versions/5.0.1/download",
+        "version": "5.0.1"
+      }
+    },
+    "iptables": {
+      "version": "4.3.4",
+      "identifier": "f22c85827ea7aeb84405a95fb970e90adda48bf0",
+      "dotted_decimal_identifier": "68165896295589806.51866186821908848.256232877493232",
+      "cache_key": "iptables-4.3.4-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/iptables/versions/4.3.4/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/iptables/versions/4.3.4/download",
+        "version": "4.3.4"
+      }
+    },
+    "logrotate": {
+      "version": "2.2.0",
+      "identifier": "53e09234a4f73cc13f46d833d2e5075cafddfaa8",
+      "dotted_decimal_identifier": "23609341620057916.54394244012692197.8094668946088",
+      "cache_key": "logrotate-2.2.0-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/logrotate/versions/2.2.0/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/logrotate/versions/2.2.0/download",
+        "version": "2.2.0"
+      }
+    },
+    "mattray": {
+      "version": "0.8.0",
+      "identifier": "d309434aaf103c73d21ebb0d7e6998a80969cba8",
+      "dotted_decimal_identifier": "59401404706394172.32600651750801001.167847479856040",
+      "source": "../cookbooks/mattray",
+      "cache_key": null,
+      "scm_info": {
+        "scm": "git",
+        "remote": "https://github.com/mattray/mattray-cookbook.git",
+        "revision": "053d4047b435bcc1e984bb4ea15f2af02bd33072",
+        "working_tree_clean": true,
+        "published": true,
+        "synchronized_remote_branches": [
+          "origin/master"
+        ]
+      },
+      "source_options": {
+        "path": "../cookbooks/mattray"
+      }
+    },
+    "ntp": {
+      "version": "3.5.6",
+      "identifier": "a26b7ccedcd7d32872cea810df16fe3b889fae9b",
+      "dotted_decimal_identifier": "45717130017822675.11385230976933654.279531648691867",
+      "cache_key": "ntp-3.5.6-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/ntp/versions/3.5.6/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/ntp/versions/3.5.6/download",
+        "version": "3.5.6"
+      }
+    },
+    "openssh": {
+      "version": "2.6.2",
+      "identifier": "e4e610f21c34497191be6de696de74f9a2e3e883",
+      "dotted_decimal_identifier": "64429255145829449.31966919441946334.128615528523907",
+      "cache_key": "openssh-2.6.2-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/openssh/versions/2.6.2/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/openssh/versions/2.6.2/download",
+        "version": "2.6.2"
+      }
+    },
+    "sudo": {
+      "version": "4.0.1",
+      "identifier": "855846ba1117e4f4ec7aac7eb684ec431d330d36",
+      "dotted_decimal_identifier": "37533232695154660.68939905941550724.259772996848950",
+      "cache_key": "sudo-4.0.1-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/sudo/versions/4.0.1/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/sudo/versions/4.0.1/download",
+        "version": "4.0.1"
+      }
+    },
+    "windows": {
+      "version": "4.0.1",
+      "identifier": "d7306d3e6b557953aea15333d8abb38162a7a9ba",
+      "dotted_decimal_identifier": "60570365749581177.23554430975858859.197368287308218",
+      "cache_key": "windows-4.0.1-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/windows/versions/4.0.1/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/windows/versions/4.0.1/download",
+        "version": "4.0.1"
+      }
+    }
+  },
+  "default_attributes": {
+
+  },
+  "override_attributes": {
+    "authorization": {
+      "sudo": {
+        "groups": [
+          "sudo"
+        ],
+        "include_sudoers_d": true,
+        "passwordless": true,
+        "users": [
+          "mattray"
+        ]
+      }
+    },
+    "chef_client": {
+      "config": {
+        "client_fork": true,
+        "color": false,
+        "http_retry_delay": 10,
+        "interval": 600,
+        "log_level": ":warn",
+        "verbose_logging": true
+      }
+    },
+    "ntp": {
+      "servers": [
+        "0.au.pool.ntp.org",
+        "1.au.pool.ntp.org",
+        "2.au.pool.ntp.org",
+        "3.au.pool.ntp.org"
+      ],
+      "sync_hw_clock": true
+    }
+  },
+  "solution_dependencies": {
+    "Policyfile": [
+      [
+        "chef-client",
+        "= 10.0.1"
+      ],
+      [
+        "chef_client_updater",
+        "= 3.2.5"
+      ],
+      [
+        "cron",
+        "= 5.0.1"
+      ],
+      [
+        "iptables",
+        "= 4.3.4"
+      ],
+      [
+        "logrotate",
+        "= 2.2.0"
+      ],
+      [
+        "mattray",
+        ">= 0.0.0"
+      ],
+      [
+        "ntp",
+        "= 3.5.6"
+      ],
+      [
+        "openssh",
+        "= 2.6.2"
+      ],
+      [
+        "sudo",
+        "= 4.0.1"
+      ],
+      [
+        "windows",
+        "= 4.0.1"
+      ]
+    ],
+    "dependencies": {
+      "chef-client (10.0.1)": [
+        [
+          "cron",
+          ">= 4.2.0"
+        ],
+        [
+          "logrotate",
+          ">= 1.9.0"
+        ],
+        [
+          "windows",
+          ">= 2.0.0"
+        ]
+      ],
+      "chef_client_updater (3.2.5)": [
+
+      ],
+      "cron (5.0.1)": [
+
+      ],
+      "iptables (4.3.4)": [
+
+      ],
+      "logrotate (2.2.0)": [
+
+      ],
+      "mattray (0.8.0)": [
+
+      ],
+      "ntp (3.5.6)": [
+
+      ],
+      "openssh (2.6.2)": [
+        [
+          "iptables",
+          ">= 1.0.0"
+        ]
+      ],
+      "sudo (4.0.1)": [
+
+      ],
+      "windows (4.0.1)": [
+
+      ]
+    }
+  }
+}
