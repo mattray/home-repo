@@ -1,7 +1,7 @@
 name 'beaglebone'
 
-include_policy 'base', path: './base.lock.json'
+include_policy 'base', policy_group: 'home', server: "https://api.chef.io/organizations/matt"
 
-cookbook 'mattray', path: '../cookbooks/mattray'
+cookbook 'mattray', git: 'https://github.com/mattray/mattray-cookbook.git'
 
 run_list 'mattray::beaglebone'

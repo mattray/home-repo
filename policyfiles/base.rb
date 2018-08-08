@@ -2,7 +2,7 @@ name 'base'
 
 default_source :supermarket
 
-cookbook 'mattray', path: '/Users/mray/ws/home-repo/cookbooks/mattray'
+cookbook 'mattray', git: 'https://github.com/mattray/mattray-cookbook.git'
 
 run_list 'chef-client::config', 'chef-client::service', 'chef-client::delete_validation', 'ntp', 'openssh', 'sudo', 'mattray'
 
