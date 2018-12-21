@@ -4,13 +4,18 @@ default_source :supermarket
 
 cookbook 'mattray', git: 'https://github.com/mattray/mattray-cookbook.git'
 
-run_list 'chef-client::config', 'chef-client::service', 'chef-client::delete_validation', 'ntp', 'openssh', 'mattray'
+run_list 'audit', 'chef-client::config', 'chef-client::service', 'chef-client::delete_validation', 'ntp', 'openssh', 'mattray'
 
-override['chef_client']['config']['http_retry_delay'] = 10
-override['chef_client']['config']['interval'] = 600
-override['chef_client']['config']['splay'] = 100
-override['chef_client']['config']['verbose_logging'] = true
 override['chef_client']['init_style'] = 'systemd'
-override['chef_client']['systemd']['timer'] = true
+override['chef_client']['interval'] = 1800
+override['chef_client']['splay'] = 100
 override['ntp']['servers'] = ['0.au.pool.ntp.org', '1.au.pool.ntp.org', '2.au.pool.ntp.org', '3.au.pool.ntp.org']
-override['ntp']['sync_hw_clock'] = true
+
+# https://docs.chef.io/data_collection_without_server.html
+override['chef_client']['config']['data_collector.server_url'] = 'https://ndnd/data-collector/v0/'
+override['chef_client']['config']['data_collector.token'] = 'JUSUwF1bwCXG7knHtp2uy1i7vwU='
+override['chef_client']['config']['data_collector.raise_on_failure'] = true
+override['chef_client']['config']['data_collector.organization'] = 'home'
+override['audit']['reporter'] = 'chef-automate'
+
+override['audit']['profiles']['linux-patch-baseline'] = { 'url': 'https://github.com/dev-sec/linux-patch-baseline/archive/0.4.0.zip' }
