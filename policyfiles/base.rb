@@ -13,8 +13,7 @@ override['ntp']['servers'] = ['0.au.pool.ntp.org', '1.au.pool.ntp.org', '2.au.po
 
 # https://docs.chef.io/data_collection_without_server.html
 override['chef_client']['config']['data_collector.server_url'] = 'https://ndnd/data-collector/v0/'
-override['chef_client']['config']['data_collector.token'] = 'JUSUwF1bwCXG7knHtp2uy1i7vwU='
-override['chef_client']['config']['data_collector.raise_on_failure'] = true
+override['chef_client']['config']['data_collector.token'] = '8ZzgdoqAPRWsW4XOHRiFx7Kbobk='
 override['chef_client']['config']['data_collector.organization'] = 'home'
 override['audit']['reporter'] = 'chef-automate'
 
