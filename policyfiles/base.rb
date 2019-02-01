@@ -16,5 +16,7 @@ override['chef_client']['config']['data_collector.server_url'] = 'https://ndnd/d
 override['chef_client']['config']['data_collector.token'] = '8ZzgdoqAPRWsW4XOHRiFx7Kbobk='
 override['chef_client']['config']['data_collector.organization'] = 'home'
 override['audit']['reporter'] = 'chef-automate'
+override['audit']['interval']['enabled'] = true
+override['audit']['interval']['time'] = 180 # 8 times a day
 
 override['audit']['profiles']['linux-patch-baseline'] = { 'url': 'https://github.com/dev-sec/linux-patch-baseline/archive/0.4.0.zip' }
