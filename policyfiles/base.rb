@@ -18,7 +18,6 @@ default['chef_client']['config']['data_collector.organization'] = 'home'
 default['audit']['reporter'] = 'chef-automate'
 default['audit']['interval']['enabled'] = true
 default['audit']['interval']['time'] = 120 # 12 times a day
-default['audit']['inspec_version'] = '3.6.6'
 
-default['audit']['profiles']['linux-patch-baseline']['url'] = 'https://github.com/dev-sec/linux-patch-baseline/archive/0.4.0.zip'
-default['audit']['profiles']['ssh-baseline']['url'] = 'https://github.com/dev-sec/ssh-baseline/archive/2.3.0.tar.gz'
+default['audit']['profiles']['linux-patch-baseline']['url'] = 'https://github.com/dev-sec/linux-patch-baseline'
+#default['audit']['profiles']['ssh-baseline']['url'] = 'https://github.com/dev-sec/ssh-baseline/archive/2.3.0.tar.gz'
