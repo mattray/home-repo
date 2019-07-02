@@ -2,6 +2,6 @@ name 'macbookpro'
 
 include_policy 'base', path: './base.lock.json'
 
-default_source :supermarket
+run_list 'mattray::macbookpro', 'chef_client_updater::default'
 
-run_list 'mattray::macbookpro'
+default_source :supermarket

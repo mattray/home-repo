@@ -15,9 +15,11 @@ default['ntp']['servers'] = ['0.au.pool.ntp.org', '1.au.pool.ntp.org', '2.au.poo
 default['chef_client']['config']['data_collector.server_url'] = 'https://ndnd/data-collector/v0/'
 default['chef_client']['config']['data_collector.token'] = '8ZzgdoqAPRWsW4XOHRiFx7Kbobk='
 default['chef_client']['config']['data_collector.organization'] = 'home'
+default['chef_client']['config']['chef_license'] = 'accept'
+
 default['audit']['reporter'] = 'chef-automate'
 default['audit']['interval']['enabled'] = true
 default['audit']['interval']['time'] = 120 # 12 times a day
 
 default['audit']['profiles']['linux-patch-baseline']['url'] = 'https://github.com/dev-sec/linux-patch-baseline'
-#default['audit']['profiles']['ssh-baseline']['url'] = 'https://github.com/dev-sec/ssh-baseline/archive/2.3.0.tar.gz'
+default['audit']['profiles']['uptime']['url'] = 'https://github.com/mattray/uptime-profile/'
