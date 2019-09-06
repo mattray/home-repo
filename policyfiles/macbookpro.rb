@@ -1,7 +1,9 @@
 name 'macbookpro'
 
-include_policy 'base', path: './base.lock.json'
-
-run_list 'mattray::macbookpro', 'chef_client_updater::default'
+include_policy 'x86', path: './x86.lock.json'
 
 default_source :supermarket
+
+cookbook 'mattray', path: '/Users/mattray/ws/cookbooks/mattray'
+
+run_list 'mattray::macbookpro'
