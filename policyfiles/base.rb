@@ -15,7 +15,7 @@ default['ntp']['servers'] = ['0.au.pool.ntp.org', '1.au.pool.ntp.org', '2.au.poo
 # https://docs.chef.io/data_collection_without_server.html
 default['chef_client']['config']['data_collector.server_url'] = 'https://ndnd.bottlebru.sh/data-collector/v0/'
 default['chef_client']['config']['data_collector.token'] = '35V9X1VO0VRSeUjukPmBsihvwXI='
-default['chef_client']['config']['data_collector.organization'] = 'home'
+
 default['chef_client']['config']['chef_license'] = 'accept'
 
 default['audit']['reporter'] = 'chef-automate'
