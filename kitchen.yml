@@ -36,7 +36,3 @@ suites:
     provisioner:
       policyfile: policyfiles/beaglebone.rb
     includes: ['debian-9']
-  - name: jenkins
-    provisioner:
-      policyfile: policyfiles/jenkins.rb
-    includes: ['debian-9']

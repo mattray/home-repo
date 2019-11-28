@@ -7,8 +7,6 @@ cookbook 'mattray', path: '/Users/mattray/ws/cookbooks/mattray'
 
 run_list 'audit', 'chef-client::config', 'chef-client::service', 'chef-client::delete_validation', 'ntp', 'openssh', 'mattray'
 
-named_run_list 'testing', 'audit'
-
 default['chef_client']['init_style'] = 'systemd'
 default['chef_client']['interval'] = 1800
 default['chef_client']['splay'] = 100
