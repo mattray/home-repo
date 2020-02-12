@@ -1,7 +1,11 @@
 name 'x86'
 
-include_policy 'base', path: './base.lock.json'
+include_policy 'debian', path: './debian.lock.json'
 
 default_source :supermarket
 
-run_list 'apt::cacher-client', 'chef_client_updater::default'
+run_list 'audit_time_window', 'chef_client_updater::default', 'leds_handler::default'
+
+default['audit_time_window']['profiles']['linux-baseline']['url'] = 'https://github.com/dev-sec/linux-baseline'
+default['audit_time_window']['profiles']['linux-baseline']['start'] = ['0300', '1500']
+default['audit_time_window']['profiles']['linux-baseline']['end'] = ['0330', '1530']
