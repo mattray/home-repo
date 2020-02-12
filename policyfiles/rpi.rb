@@ -1,10 +1,7 @@
 name 'rpi'
 
-include_policy 'base', path: './base.lock.json'
-
 default_source :supermarket
-
-cookbook 'leds_handler', git: 'https://github.com/mattray/leds_handler-cookbook.git'
+cookbook 'mattray', path: '/Users/mattray/ws/cookbooks/mattray'
 
 run_list 'leds_handler::default', 'mattray::raspberrypi'
 
