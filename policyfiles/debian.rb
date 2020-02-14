@@ -8,7 +8,7 @@ cookbook 'timesyncd', path: '/Users/mattray/ws/cookbooks/timesyncd'
 
 run_list 'apt::cacher-client', 'timesyncd'
 
-default['apt']['cacher_client']['cacher_server']['host'] = 'cubert'
+default['apt']['cacher_client']['cacher_server']['host'] = 'ndnd'
 default['apt']['cacher_client']['cacher_server']['port'] = 3142
 default['apt']['cacher_client']['cacher_server']['proxy_ssl'] = true
 
