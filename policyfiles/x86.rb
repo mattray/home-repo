@@ -3,6 +3,7 @@ name 'x86'
 include_policy 'debian', path: './debian.lock.json'
 
 default_source :supermarket
+cookbook 'leds_handler', path: '/Users/mattray/ws/cookbooks/leds_handler'
 
 run_list 'audit_time_window', 'chef_client_updater::default', 'leds_handler::default'
 
