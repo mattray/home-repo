@@ -7,5 +7,9 @@
 .vagrant
 Berksfile.lock
 cookbooks/*
+environments/*
+nodes/*
+roles/*
 .kitchen
 policyfiles/*json
+policyfiles/*tgz
