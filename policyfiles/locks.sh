@@ -8,10 +8,8 @@ rm -rf ~/.chefdk/cache ~/.chef-workstation/cache ./*json ./*tgz
 
 # don't upload these
 chef install base.rb
-chef install debian.rb
-chef install rpi.rb
-chef install x86.rb
 chef install automate.rb
+chef install workstation.rb
 chef install raspbian.rb
 chef install centos.rb
 chef install beaglebone.rb
@@ -20,7 +18,7 @@ chef install beaglebone.rb
 (chef install chef-server.rb; chef push home chef-server.lock.json) &
 
 # crushinator
-chef export x86.lock.json --archive .
+chef export workstation.lock.json --archive .
 
 # inez
 chef export automate.lock.json --archive .
@@ -34,6 +32,6 @@ chef export centos.lock.json --archive .
 # # cubert
 chef export beaglebone.lock.json --archive .
 
-rm -f base.lock.json chef-server.lock.json debian.lock.json rpi.lock.json
+rm -f base.lock.json chef-server.lock.json
 scp ./*tgz ndnd:/var/chef/policyfiles/ &
 scp ./*lock.json ndnd:/var/chef/policyfiles/ &

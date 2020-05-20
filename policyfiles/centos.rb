@@ -1,10 +1,14 @@
 name 'centos'
 
 include_policy 'base', path: './base.lock.json'
-include_policy 'rpi', path: './rpi.lock.json'
 
 default_source :supermarket
 
-run_list 'ntp'
+cookbook 'mattray', path: '/Users/mattray/ws/cookbooks/mattray'
+
+run_list 'ntp', 'mattray::raspberrypi', 'leds_handler'
 
 default['ntp']['servers'] = ['10.0.0.1']
+default['ntp']['sync_hw_clock'] = true
+
+override['ohai']['disabled_plugins'] = [ 'dmi' ]
