@@ -6,7 +6,7 @@ cookbook 'managed_chef_server', path: '/Users/mattray/ws/cookbooks/managed_chef_
 cookbook 'mattray', path: '/Users/mattray/ws/cookbooks/mattray'
 cookbook 'timesyncd', path: '/Users/mattray/ws/cookbooks/timesyncd'
 
-run_list 'audit', 'mattray', 'chef-client::config', 'apt::cacher-ng', 'apt::cacher-client', 'timesyncd', 'mattray::macbookpro', 'openssh', 'chef_client_updater', 'leds_handler', 'managed_chef_server', 'managed_chef_server::managed_organization', 'managed_chef_server::policyfile_loader'
+run_list 'audit', 'mattray', 'chef-client::config', 'apt::cacher-client', 'timesyncd', 'mattray::macbookpro', 'openssh', 'chef_client_updater', 'leds_handler', 'managed_chef_server', 'managed_chef_server::managed_organization', 'managed_chef_server::policyfile_loader', 'starship'
 
 default['audit']['interval']['enabled'] = true
 default['audit']['interval']['time'] = 30 # 48 times a day
@@ -18,7 +18,7 @@ default['chef_client']['config']['chef_license'] = 'accept'
 default['chef_client']['config']['data_collector.server_url'] = 'https://inez.bottlebru.sh/data-collector/v0/'
 default['chef_client']['config']['data_collector.token'] = '35V9X1VO0VRSeUjukPmBsihvwXI='
 
-default['apt']['cacher_client']['cacher_server']['host'] = 'ndnd'
+default['apt']['cacher_client']['cacher_server']['host'] = 'cubert'
 default['apt']['cacher_client']['cacher_server']['port'] = 3142
 default['apt']['cacher_client']['cacher_server']['proxy_ssl'] = true
 
@@ -36,3 +36,6 @@ default['mcs']['policyfile']['dir'] = '/var/chef/policyfiles/'
 default['mcs']['policyfile']['group'] = 'ndnd-home'
 default['mcs']['profiles']['root_url'] = 'https://inez.bottlebru.sh'
 default['mcs']['skip_test'] = true
+
+default['starship']['user']['mattray'] = 'bash'
+default['starship']['user']['root'] = 'bash'
