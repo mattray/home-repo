@@ -1,5 +1,5 @@
 pkg_name=effortless-ndnd-home
-pkg_version=0.1.0
+pkg_version=0.1.1
 pkg_origin=chef
 pkg_scaffolding="chef/scaffolding-chef-inspec"
 scaffold_automate_server_url=$AUTOMATE_SERVER_URL # Example: https://foo.bar.com
