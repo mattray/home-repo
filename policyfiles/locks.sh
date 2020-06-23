@@ -8,6 +8,7 @@ rm -rf ~/.chefdk/cache ~/.chef-workstation/cache ./*json ./*tgz
 
 # don't upload these
 chef install base.rb
+#chef install macos.rb
 chef install automate.rb
 chef install workstation.rb
 chef install raspbian.rb
@@ -35,3 +36,5 @@ chef export beaglebone.lock.json --archive .
 rm -f base.lock.json chef-server.lock.json
 scp ./*tgz ndnd:/var/chef/policyfiles/ &
 scp ./*lock.json ndnd:/var/chef/policyfiles/ &
+
+terminal-notifier -title CHEF -message "Policies Uploaded" >> /dev/null

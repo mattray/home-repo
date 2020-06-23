@@ -14,4 +14,4 @@ default['apt']['cacher_client']['cacher_server']['proxy_ssl'] = true
 
 default['ntp']['servers'] = ['10.0.0.1']
 
-override['ohai']['disabled_plugins'] = [ 'dmi' ]
+override['ohai']['disabled_plugins'] = [ 'dmi' , 'shard_seed' ]
