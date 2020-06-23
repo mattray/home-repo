@@ -6,13 +6,8 @@ cookbook 'managed_chef_server', path: '/Users/mattray/ws/cookbooks/managed_chef_
 cookbook 'mattray', path: '/Users/mattray/ws/cookbooks/mattray'
 cookbook 'timesyncd', path: '/Users/mattray/ws/cookbooks/timesyncd'
 
-run_list 'audit', 'mattray', 'chef-client::config', 'apt::cacher-client', 'timesyncd', 'mattray::macbookpro', 'openssh', 'chef_client_updater', 'leds_handler', 'managed_chef_server', 'managed_chef_server::managed_organization', 'managed_chef_server::policyfile_loader', 'starship'
-
-default['audit']['interval']['enabled'] = true
-default['audit']['interval']['time'] = 30 # 48 times a day
-default['audit']['profiles']['linux-patch-baseline']['url'] = 'https://github.com/mattray/linux-patch-baseline/tree/debian_fix'
-default['audit']['profiles']['uptime']['url'] = 'https://github.com/mattray/uptime-profile/'
-default['audit']['reporter'] = 'chef-automate'
+run_list 'mattray', 'mattray::effortless-audit', 'chef-client::config', 'apt::cacher-client', 'timesyncd', 'mattray::macbookpro', 'openssh', 'chef_client_updater', 'leds_handler', 'managed_chef_server', 'managed_chef_server::managed_organization', 'managed_chef_server::policyfile_loader', 'starship'
+named_run_list :policies, 'managed_chef_server::policyfile_loader'
 
 default['chef_client']['config']['chef_license'] = 'accept'
 default['chef_client']['config']['data_collector.server_url'] = 'https://roberto.bottlebru.sh/data-collector/v0/'
