@@ -1,6 +1,6 @@
 name: effortless-audit-mattray
-title: Effortless Audits for Matt Ray's home lab, version 0.1.4
-version: 0.1.4
+title: Effortless Audits for Matt Ray's home lab, version 0.1.5
+version: 0.1.5
 
 depends:
   - name: uptime
