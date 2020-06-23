@@ -1,4 +1,4 @@
 pkg_name=effortless-ndnd-home
-pkg_version=0.1.2
+pkg_version=0.1.3
 pkg_origin=chef
 pkg_scaffolding="chef/scaffolding-chef-inspec"
