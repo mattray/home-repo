@@ -6,12 +6,12 @@ default_source :supermarket
 
 cookbook 'mattray', path: '/Users/mattray/ws/cookbooks/mattray'
 
-run_list 'apt::cacher-client', 'ntp', 'mattray::raspberrypi', 'leds_handler'
+run_list 'apt::cacher-client', 'mattray::raspberrypi', 'leds_handler'
 
 default['apt']['cacher_client']['cacher_server']['host'] = 'cubert'
 default['apt']['cacher_client']['cacher_server']['port'] = 3142
 default['apt']['cacher_client']['cacher_server']['proxy_ssl'] = true
 
-default['ntp']['servers'] = ['10.0.0.1']
+default['audit']['waiver_file'] = '/root/waivers.yml'
 
 override['ohai']['disabled_plugins'] = [ 'dmi' , 'shard_seed' ]

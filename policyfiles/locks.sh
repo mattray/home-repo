@@ -8,7 +8,7 @@ rm -rf ~/.chefdk/cache ~/.chef-workstation/cache ./*json ./*tgz
 
 # don't upload these
 chef install base.rb
-#chef install macos.rb
+chef install macos.rb
 chef install automate.rb
 chef install workstation.rb
 chef install raspbian.rb
@@ -29,6 +29,9 @@ chef export raspbian.lock.json --archive .
 
 # banjo
 chef export centos.lock.json --archive .
+
+# Macs
+chef export macos.lock.json --archive .
 
 # # cubert
 chef export beaglebone.lock.json --archive .

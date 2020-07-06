@@ -4,7 +4,7 @@ default_source :supermarket
 
 cookbook 'mattray', path: '/Users/mattray/ws/cookbooks/mattray'
 
-run_list 'audit', 'mattray', 'chef-client::config', 'openssh'
+run_list 'audit', 'mattray', 'chef-client::config', 'openssh', 'systemd_timesyncd'
 
 default['audit']['reporter'] = 'chef-server-automate'
 default['audit']['fetcher'] = 'chef-server'
@@ -14,3 +14,5 @@ default['audit']['profiles']['linux-patch-baseline']['url'] = 'https://github.co
 default['audit']['profiles']['uptime']['url'] = 'https://github.com/mattray/uptime-profile/'
 
 default['chef_client']['config']['chef_license'] = 'accept'
+
+default['systemd_timesyncd']['ntp'] = ['10.0.0.1']

@@ -3,9 +3,8 @@ name 'workstation'
 default_source :supermarket
 
 cookbook 'mattray', path: '/Users/mattray/ws/cookbooks/mattray'
-cookbook 'timesyncd', path: '/Users/mattray/ws/cookbooks/timesyncd'
 
-run_list 'mattray', 'mattray::effortless-audit', 'chef-client::config', 'openssh', 'apt::cacher-client', 'timesyncd', 'chef_client_updater', 'starship'
+run_list 'mattray', 'mattray::effortless-audit', 'chef-client::config', 'openssh', 'apt::cacher-client', 'systemd_timesyncd', 'chef_client_updater', 'starship'
 
 default['chef_client']['config']['chef_license'] = 'accept'
 
@@ -13,7 +12,7 @@ default['apt']['cacher_client']['cacher_server']['host'] = 'cubert'
 default['apt']['cacher_client']['cacher_server']['port'] = 3142
 default['apt']['cacher_client']['cacher_server']['proxy_ssl'] = true
 
-default['timesyncd']['NTP'] = ['10.0.0.1']
+default['systemd_timesyncd']['ntp'] = ['10.0.0.1']
 
 default['starship']['user']['mattray']['shell'] = 'bash'
 default['starship']['user']['mattray']['config'] = {
