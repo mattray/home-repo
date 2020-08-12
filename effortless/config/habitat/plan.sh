@@ -1,9 +1,9 @@
 pkg_name=effortless-config-base
 pkg_origin=mattray
-pkg_version=0.1.2
+pkg_version=0.1.3
 pkg_maintainer="Matt Ray"
 pkg_license=("Apache-2.0")
-pkg_scaffolding="mattray/scaffolding-chef-infra"
+pkg_scaffolding="chef/scaffolding-chef-infra"
 pkg_svc_user=("root")
 scaffold_policy_name="effortless-base"
 
