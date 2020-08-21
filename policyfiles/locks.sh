@@ -4,10 +4,12 @@
 
 set -xeuo pipefail #echo on, stop on failures
 
-rm -rf ~/.chefdk/cache ~/.chef-workstation/cache ./*json ./*tgz
+#rm -rf ~/.chef-workstation/cache ./*json ./*tgz
+rm -rf ./*json ./*tgz
 
 # don't upload these
 chef install base.rb
+chef install effortless.rb
 chef install macos.rb
 chef install automate.rb
 chef install workstation.rb
@@ -21,7 +23,7 @@ chef install beaglebone.rb
 # crushinator
 chef export workstation.lock.json --archive .
 
-# inez
+# roberto
 chef export automate.lock.json --archive .
 
 # guenter, hyperchicken, wernstrom
@@ -36,7 +38,7 @@ chef export macos.lock.json --archive .
 # # cubert
 chef export beaglebone.lock.json --archive .
 
-rm -f base.lock.json chef-server.lock.json
+rm -f base.lock.json effortless.lock.json chef-server.lock.json
 scp ./*tgz ndnd:/var/chef/policyfiles/ &
 scp ./*lock.json ndnd:/var/chef/policyfiles/ &
 
