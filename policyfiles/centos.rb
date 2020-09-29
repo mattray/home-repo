@@ -17,4 +17,4 @@ default['chef_client']['config']['chef_license'] = 'accept'
 
 default['ntp']['servers'] = ['10.0.0.1']
 
-override['ohai']['disabled_plugins'] = [ 'dmi', 'shard_seed' ]
+override['ohai']['disabled_plugins'] = %w(dmi shard_seed)
