@@ -13,4 +13,4 @@ default['apt']['cacher_client']['cacher_server']['port'] = 3142
 default['apt']['cacher_client']['cacher_server']['proxy_ssl'] = true
 
 override['apt']['cacher_dir'] = '/emmc'
-override['ohai']['disabled_plugins'] = [ 'dmi' , 'shard_seed' ]
+override['ohai']['disabled_plugins'] = %w(dmi shard_seed)
