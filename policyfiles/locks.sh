@@ -4,42 +4,27 @@
 
 set -xeuo pipefail #echo on, stop on failures
 
-#rm -rf ~/.chef-workstation/cache ./*json ./*tgz
 rm -rf ./*json ./*tgz
 
-# don't upload these
-chef install base.rb
-chef install effortless.rb
-chef install macos.rb
-chef install automate.rb
-chef install workstation.rb
-chef install raspbian.rb
-chef install centos.rb
-chef install beaglebone.rb
+# all running against Hosted Chef
+# (chef install chef-server.rb; chef push home chef-server.lock.json) &
 
-# ndnd runs against Hosted Chef
-(chef install chef-server.rb; chef push home chef-server.lock.json) &
+# # banjo
+# (chef install centos.rb; chef push home centos.lock.json) &
 
-# crushinator
-chef export workstation.lock.json --archive .
+# wernstrom,  mom, walt, larry, igner, nixon, umbriel
+(chef install base.rb; chef push home base.lock.json)
 
-# roberto
-chef export automate.lock.json --archive .
+# cubert
+(chef install beaglebone.rb; chef push home beaglebone.lock.json) &
 
-# guenter, hyperchicken, wernstrom
-chef export raspbian.lock.json --archive .
+# morbo
+(chef install workstation.rb; chef push home workstation.lock.json) &
 
-# banjo
-chef export centos.lock.json --archive .
+wait
 
-# Macs
-chef export macos.lock.json --archive .
+rm -f *.lock.json
 
-# # cubert
-chef export beaglebone.lock.json --archive .
-
-rm -f base.lock.json effortless.lock.json chef-server.lock.json
-scp ./*tgz ndnd:/var/chef/policyfiles/ &
-scp ./*lock.json ndnd:/var/chef/policyfiles/ &
+wait
 
 terminal-notifier -title CHEF -message "Policies Uploaded" >> /dev/null
